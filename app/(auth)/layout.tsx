@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <div className="h-full bg-red-100">{children}</div>;
+  return (
+    <div className="h-full flex items-center justify-center">{children}</div>
+  );
 }
