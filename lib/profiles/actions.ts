@@ -1,5 +1,22 @@
-import { redirectToSignIn, currentUser } from '@clerk/nextjs';
+import { redirectToSignIn, currentUser, auth } from '@clerk/nextjs';
 import prisma from '../client';
+import { Profile } from '@prisma/client';
+
+export async function getCurrentProfile(): Promise<Profile | null> {
+  const user = await currentUser();
+
+  if (!user) {
+    return null;
+  }
+
+  const profile = await prisma.profile.findUnique({
+    where: {
+      userId: user.id,
+    },
+  });
+
+  return profile;
+}
 
 export async function getOrCreateUserProfile() {
   const user = await currentUser();
