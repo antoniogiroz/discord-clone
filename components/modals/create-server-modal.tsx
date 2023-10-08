@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
 import { useModal } from '@/hooks/use-modal.store';
 
 export function CreateServerModal() {
-  const { isOpen, onClose, type } = useModal();
+  const { isOpen, closeModal, type } = useModal();
   const router = useRouter();
 
   const isModalOpen = isOpen && type === 'createServer';
@@ -34,7 +34,7 @@ export function CreateServerModal() {
 
       form.reset();
       router.refresh();
-      onClose();
+      closeModal();
     } catch (error) {
       console.error(error);
     }
@@ -42,7 +42,7 @@ export function CreateServerModal() {
 
   function handleClose() {
     form.reset();
-    onClose();
+    closeModal();
   }
 
   return (
