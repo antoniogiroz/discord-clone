@@ -1,4 +1,4 @@
-import prisma from '@/lib/client';
+import prisma from '@/lib/prisma';
 import { getCurrentProfile } from '@/lib/profiles/actions';
 import { MemberRole } from '@prisma/client';
 import { NextRequest, NextResponse } from 'next/server';

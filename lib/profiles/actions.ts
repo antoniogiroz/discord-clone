@@ -1,5 +1,5 @@
 import { redirectToSignIn, currentUser, auth } from '@clerk/nextjs';
-import prisma from '../client';
+import prisma from '../prisma';
 import { Profile } from '@prisma/client';
 
 export async function getCurrentProfile(): Promise<Profile | null> {
