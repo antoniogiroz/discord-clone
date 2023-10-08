@@ -3,7 +3,7 @@ import { getOrCreateUserProfile } from '@/lib/profiles/actions';
 import { getFirstServerByProfileId } from '@/lib/servers/actions';
 import { redirect } from 'next/navigation';
 
-export default async function Page() {
+export default async function SetupPage() {
   const profile = await getOrCreateUserProfile();
 
   const server = await getFirstServerByProfileId(profile.id);
