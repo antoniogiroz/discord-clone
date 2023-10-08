@@ -16,16 +16,13 @@ export function NavigationItem({ id, imageUrl, name }: Props) {
   const router = useRouter();
 
   function onClick() {
-    router.push(`/server/${id}`);
+    router.push(`/servers/${id}`);
   }
 
   return (
     <div>
       <ActionTooltip label={name} side="right" align="center">
-        <button
-          className="group relative flex items-center"
-          onClick={() => onClick}
-        >
+        <button className="group relative flex items-center" onClick={onClick}>
           <div
             className={cn(
               'absolute left-0 bg-primary rounded-r-full transition-all w-[4px]',
