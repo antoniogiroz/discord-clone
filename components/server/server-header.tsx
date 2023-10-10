@@ -41,7 +41,10 @@ export function ServerHeader({ server, role }: Props) {
           </DropdownMenuItem>
         )}
         {isAdmin && (
-          <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            className="px-3 py-2 text-sm cursor-pointer"
+            onClick={() => openModal('editServer', { server })}
+          >
             Server Settings
             <Settings className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
